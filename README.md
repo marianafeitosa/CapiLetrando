@@ -1,56 +1,127 @@
-# Welcome to your Expo app 👋
+# CapiLetrando 📚✨
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicação educacional voltada ao processo de alfabetização infantil, com foco em aprendizagem adaptativa, acessibilidade e inclusão.
 
-## Get started
+#  Sobre o Projeto
 
-1. Install dependencies
+O **CapiLetrando** é uma plataforma educacional desenvolvida para apoiar crianças em fase de alfabetização por meio de experiências interativas, acessíveis e personalizadas.
 
-   ```bash
-   npm install
-   ```
+O projeto utiliza estratégias de aprendizagem adaptativa para acompanhar o desenvolvimento individual de cada criança, oferecendo atividades adequadas ao seu nível de desempenho e promovendo um ambiente de aprendizado mais eficiente, acolhedor e motivador.
 
-2. Start the app
+Além do foco pedagógico, o sistema prioriza acessibilidade e inclusão, buscando atender diferentes perfis de aprendizagem e necessidades educacionais.
 
-   ```bash
-   npx expo start
-   ```
 
-In the output, you'll find options to open the app in a
+# Objetivos
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* Auxiliar no processo de alfabetização infantil;
+* Proporcionar experiências de aprendizagem adaptativas;
+* Incentivar o aprendizado por meio de interações lúdicas;
+* Promover inclusão e acessibilidade educacional;
+* Facilitar o acompanhamento da evolução da criança;
+* Estimular o desenvolvimento cognitivo e socioemocional.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+# Funcionalidades do Sistema
 
-When you're ready, run:
+## Usuário e Acesso
 
-```bash
-npm run reset-project
-```
+* Cadastro de responsáveis;
+* Login e autenticação de usuários;
+* Cadastro de crianças;
+* Gerenciamento de perfis.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-### Other setup steps
+## Módulo de Alfabetização
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+* Reconhecimento de letras;
+* Associação entre letras e sons;
+* Formação de palavras;
+* Completar palavras;
+* Atividades interativas e educativas.
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+## Aprendizagem Adaptativa
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+* Ajuste automático do nível de dificuldade;
+* Recomendação personalizada de atividades;
+* Análise de desempenho da criança;
+* Monitoramento da evolução individual.
 
-## Join the community
 
-Join our community of developers creating universal apps.
+# Desenvolvimento Socioemocional
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+* Histórias interativas;
+* Perguntas emocionais e reflexivas;
+* Desenvolvimento de empatia;
+* Estímulos positivos durante o aprendizado.
+
+
+# Gamificação
+
+* Sistema de pontuação;
+* Recompensas e incentivos;
+* Medalhas e conquistas;
+* Progressão por níveis.
+
+
+# Dashboard do Responsável
+
+* Relatórios de progresso;
+* Monitoramento do tempo de uso;
+* Acompanhamento da evolução da aprendizagem;
+* Identificação de dificuldades e áreas de melhoria.
+
+
+# Configurações
+
+* Controle de som;
+* Configurações de acessibilidade;
+* Controle parental;
+* Personalização do perfil.
+
+
+# Acessibilidade e Inclusão
+
+O **CapiLetrando** foi idealizado com foco em acessibilidade e inclusão educacional, buscando proporcionar uma experiência acolhedora e eficiente para crianças com diferentes necessidades de aprendizagem.
+
+Entre os recursos planejados estão:
+
+* Navegação simplificada e intuitiva;
+* Atividades adaptadas ao desempenho individual;
+* Interface acessível;
+* Estímulos visuais e sonoros adequados ao público infantil.
+
+# Tecnologias Utilizadas
+
+## Front-end
+
+* React Native
+
+## Back-end e Serviços
+
+* Firebase
+
+## Outras Tecnologias
+
+* Tecnologias complementares serão definidas conforme a evolução do projeto.
+
+#  Público-Alvo
+
+* Crianças em fase de alfabetização;
+* Professores e educadores;
+* Pais e responsáveis;
+* Instituições educacionais.
+
+# Considerações Finais
+
+O **CapiLetrando** busca unir tecnologia, educação e inclusão para oferecer uma experiência de alfabetização moderna, adaptativa e humanizada, contribuindo para o desenvolvimento infantil de forma lúdica, acessível e eficiente.
+
+# Equipe de Desenvolvimento
+
+Projeto desenvolvido com foco em educação, inclusão e tecnologia, buscando transformar o processo de alfabetização infantil por meio de soluções digitais acessíveis e inovadoras.
+
+# Integrantes
+
+* Giovana Marsigli Rodrigues
+* Giovanna Aparecida Vivencio Rodrigues
+* Mariana Akemi Arashiro Santos Feitosa
