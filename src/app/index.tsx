@@ -1,98 +1,203 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
-import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
-function getDevMenuHint() {
-  if (Platform.OS === 'web') {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
-  return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
-  );
-}
+import colors from '../constants/colors';
+import fonts from '../constants/fonts';
+
+import HomeBackground from '../components/HomeBackground';
+import MenuButton from '../components/MenuButton';
+
+// Como o index.tsx está em src/app,
+// precisamos voltar duas pastas para chegar em assets.
+const LOGO = require('../../assets/images/Logo.png');
+const CAPIVARA_MOCHILA = require('../../assets/images/CapivaraMochila.png');
+const LETREIRO = require('../../assets/images/Letreiro.png');
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
+    <View style={styles.root}>
+      <HomeBackground />
 
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
+      <SafeAreaView style={styles.safe}>
+        {/* HEADER */}
+        <View style={styles.header}>
+          <View style={styles.logoRow}>
+            <View style={styles.logoIconWrap}>
+              <Image
+                source={LOGO}
+                style={styles.logoIconImg}
+                resizeMode="contain"
+              />
+            </View>
 
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
+            <View>
+              <Text style={styles.logoTitle}>CapiLetrando</Text>
+
+              <Text style={styles.logoSubtitle}>
+                Protótipos inclusivos
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.agesBadge}>
+            <Text style={styles.agesText}>
+              4-8{'\n'}anos
+            </Text>
+          </View>
+        </View>
+
+        {/* CONTEÚDO PRINCIPAL */}
+        <View style={styles.hero}>
+          <Image
+            source={LETREIRO}
+            style={styles.heroLogo}
+            resizeMode="contain"
           />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
 
-        {Platform.OS === 'web' && <WebBadge />}
+          <Image
+            source={CAPIVARA_MOCHILA}
+            style={styles.mascotImg}
+            resizeMode="contain"
+          />
+        </View>
+
+        {/* MENU */}
+        <View style={styles.menu}>
+          <MenuButton
+            label="ATIVIDADES"
+            color={colors.blue}
+            onPress={() => router.push('/atividades')}
+          />
+
+          <MenuButton
+            label="HISTÓRIAS"
+            color={colors.yellow}
+            onPress={() => router.push('/historias')}
+          />
+
+          <MenuButton
+            label="MINHA CAPIVARA"
+            color={colors.red}
+            onPress={() => {}}
+          />
+
+          <MenuButton
+            label="CONFIGURAÇÕES"
+            color={colors.purple}
+            icon={
+              <Ionicons
+                name="settings-sharp"
+                size={22}
+                color="#fff"
+              />
+            }
+            onPress={() => {}}
+          />
+        </View>
       </SafeAreaView>
-    </ThemedView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    justifyContent: 'center',
+  },
+
+  safe: {
+    flex: 1,
+  },
+
+  header: {
     flexDirection: 'row',
-  },
-  safeArea: {
-    flex: 1,
-    paddingHorizontal: Spacing.four,
+    justifyContent: 'space-between',
     alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
+    paddingHorizontal: 20,
+    paddingTop: 10,
   },
-  heroSection: {
+
+  logoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  logoIconWrap: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: colors.white,
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
+    marginRight: 10,
+    overflow: 'hidden',
   },
-  title: {
+
+  logoIconImg: {
+    width: 42,
+    height: 42,
+  },
+
+  logoTitle: {
+    fontFamily: fonts.extraBold,
+    fontSize: 16,
+    color: colors.textDark,
+  },
+
+  logoSubtitle: {
+    fontFamily: fonts.medium,
+    fontSize: 11,
+    color: colors.textMuted,
+    marginTop: 1,
+  },
+
+  agesBadge: {
+    backgroundColor: colors.yellow,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  agesText: {
+    fontFamily: fonts.extraBold,
+    fontSize: 12,
     textAlign: 'center',
+    color: colors.textDark,
   },
-  code: {
-    textTransform: 'uppercase',
+
+  hero: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 18,
   },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
+
+  heroLogo: {
+    width: 250,
+    height: 70,
+    marginBottom: 4,
+  },
+
+  mascotImg: {
+    width: 230,
+    height: 220,
+     marginBottom: 50,
+  },
+
+  menu: {
+    paddingHorizontal: 24,
+    paddingTop: 55,
+    paddingBottom: 24,
+    gap: 7,
   },
 });
